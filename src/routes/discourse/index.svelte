@@ -20,7 +20,7 @@
 
 <script>
 	import { page, session } from '$app/stores';
-	import ArticleList from '$lib/components/ArticleList/index.svelte';
+	import Article from '$lib/components/Article/index.svelte';
 	import Pagination from '$lib/components/Pagenation.svelte';
 
 	export let articles;
@@ -67,7 +67,7 @@
 					</ul>
 				</div>
 
-				<ArticleList {articles} />
+				<Article {articles} />
 				<Pagination {pages} {p} href={(p) => `/?${page_link_base}&page=${p}`} />
 			</div>
 		</div>
