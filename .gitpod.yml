@@ -4,6 +4,21 @@
 
 tasks:
   - init: npm install && npm run build
-    command: npm run dev
+    command: |
+      export HMR_HOST=`gp url 3000`
+      echo "Starting dev server..."
+      npm run dev
 
+ports:
+  - port: 3000
+    onOpen: open-browser
 
+vscode:
+  extensions:
+    - svelte.svelte-vscode
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
