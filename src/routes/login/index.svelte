@@ -38,7 +38,6 @@
 			<label class="text-xs font-extralight" for="email">e - m a i l</label>
 			<input
 				class="w-full focus:outline-none focus:outline-0 text-lg p-1 my-1 bg-none border-t border-l border-cyan-900"
-				autoFocus
 				id="email"
 				type="text"
 				bind:value={email}
