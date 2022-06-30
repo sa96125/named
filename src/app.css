@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@font-face {
+	font-family: 'noe';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/Noe Display Medium.ttf') format('woff2');
+}
+
+@font-face {
+	font-family: 'titillium';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,300&display=swap');;
+}
+
+main {
+	min-height: calc(100vh - 104px);
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+	@apply text-gray-800 dark:text-gray-50;
+}
+
+pre::-webkit-scrollbar {
+	display: none;
+}
+
+pre {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+
+/* Remove Safari input shadow on mobile */
+input[type='text'],
+input[type='email'] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
