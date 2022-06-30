@@ -1,15 +1,22 @@
-<nav class="py-4 bg-[#f9f8e6] border-b-[1px] border-black shadow-lg font-medium ">
-	<div class="container  px-40  flex items-center justify-between">
+<script>
+	let y
+</script>
+
+<svelte:window bind:scrollY={y} />
+
+<nav class="py-4 bg-[#ffaf1c] border-b-[1px] sticky top-0 border-black transition duration-500 ease-linear {y > 150 ? 'bg-[#252521] text-white text-xs py-1' : ''}">
+	<div class=" max-w-7xl m-auto flex items-center justify-between">
 		<span class=" flex items-center justify-between gap-5">
-			<a href="/">[logo]</a>
-			<h4 class='ml-5 w-52 font-mono text-sm rounded-sm p-1 border-b-2 border-black'>hello, developer</h4>
-	
+			<a class="font-display text-4xl border-black {y > 150 ? 'text-lg' : ''}"  href="/">P h i</a>
 		</span>
-		<span class="text-md focus:font-semibold flex gap-5  items-center">
+		<span class="text-md focus:font-semibold flex gap-7 items-center ">
+			<a href="/studykit">Blog</a>
+			<a href="/studykit">Let's learn</a>
 			<a href="/discourse">Community</a>
-			<a href="/studykit">Let's learn open resources</a>
+			<a href="/discourse">Support us</a>
 			<a class="bg-black text-xs font-mono text-neutral-50 px-5 py-2 rounded-sm" href="/login">Sign In</a>
 		</span>
-
 	</div>
 </nav>
+
+

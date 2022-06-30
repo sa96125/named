@@ -1,12 +1,11 @@
 <script context="module">
+	// URL의 params도 같이 붙여서 넘긴다.
 	export async function load({ url, fetch }) {
 		const [{ articles, pages }, { tags }] = await Promise.all([
-			// URL의 params도 같이 붙여서 넘긴다.
-			fetch(`/api/articles.json${url.search}`, { credentials: 'include' })
-			.then((response) => response.json()),
-			fetch('/api/tags.json')
-			.then((response) => response.json())
+			fetch(`/api/articles.json${url.search}`, { credentials: 'include' }).then((response) => response.json()),
+			fetch('/api/tags.json').then((response) => response.json())
 		]);
+
 		return {
 			props: {
 				articles,
@@ -18,75 +17,56 @@
 </script>
 
 <script>
-	import { page, session } from '$app/stores';
-	import MentorList from '$lib/components/MentorList/index.svelte';
-	import MentorCard from '$lib/components/MentorList/MentorCard.svelte';
-	import Pagination from '$lib/components/Pagenation.svelte';
-
+	import { page } from '$app/stores';
+	import Articles from '$lib/components/Articles/index.svelte';
+	import SideCard from '$lib/components/SideCard.svelte'
 	export let articles;
-	export let pages;
 	export let tags;
-
-	// url에 담긴 값을 기준으로 tag, tab값을 셋팅
-	$: p = +$page.url.searchParams.get('p') || 1;
 	$: tag = $page.url.searchParams.get('tag');
-	$: tab = $page.url.searchParams.get('tab') || 'all';
-	$: page_link_base = tag ? `tag=${tag}` : `tab=${tab}`;
+	// $: p = +$page.url.searchParams.get('p') || 1;
+	// $: page_link_base = tag ? `tag=${tag}` : `tab=${tab}`;
 </script>
 
 <svelte:head>
 	<title>Welcome to Dementor</title>
 </svelte:head>
 
-<div class="home-page">
-	{#if !$session.user}
-		<div class=" bg-[#ffcd1b] text-black h-auto pb-5 overflow-hidden border-b-[1px] border-black">
-			<div class="container px-40 py-5 ">
-				<p class="logo-font text-8xl">Don't pay for develop.</p>
-				<p class="logo-font text-6xl">A place to share your knowledge.</p>
-				<p class="logo-font text-6xl">A place to share your knowledge.</p>
-				<p class="logo-font text-6xl">A place to share your knowledge.</p>
-				<p class="logo-font text-6xl">A place to share your knowledge.</p>
-			</div>
-		</div>
-	{/if}
-
-	<div class="container px-40  page">
-		<div class="row">
-			<div class="col-md-9">
-				<div class="feed-toggle">
-					<ul class="nav nav-pills outline-active">
-						<li class="nav-item">
-							<a
-								href="/?tab=all"
-								rel="prefetch"
-								class="nav-link"
-								class:active={tab === 'all' && !tag}
-							>
-								Instructor
-							</a>
-						</li>
-
-						<li class="nav-item">
-							<a 
-								href="/?tab=blog" 
-								rel="prefetch" 
-								class="nav-link" 
-								class:active={tab === 'blog'}
-							>
-								Blog
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<MentorList {articles} />
-				<Pagination {pages} {p} href={(p) => `/?${page_link_base}&page=${p}`} />
-			</div>
-
-			<div class="col-md-3">
-				<MentorCard />
-			</div>
-		</div>
+<!-- * hero -->
+<div class="bg-[#ffaf1c] font-sans text-black overflow-hidden h-auto border-b-[1px] border-black">
+	<div class="max-w-7xl m-auto py-10  ">
+		<p class="logo-font text-8xl">Don't pay for develop.</p>
+		<p class="logo-font text-6xl">A place to share your knowledge.</p>
+		<p class="logo-font text-6xl">A place to share your knowledge.</p>
+		<p class="logo-font text-6xl">A place to share your knowledge.</p>
+		<p class="logo-font text-6xl">A place to share your knowledge.</p>
 	</div>
 </div>
+
+
+<!-- * content -->
+<div class="max-w-7xl m-auto ">
+	 <div class="grid grid-cols-12 gap-16 py-5">
+		 <div class="feeds col-span-8">
+			<div class="nav flex gap-5 font-mono border-b-[1px] ">
+				<a class="bg-black text-white p-2" href="/">#all</a>
+				{#each tags as tag}
+						<a class="nav-item p-2 text-zinc-400 hover:bg-black hover:text-white { tag ? '':''}" href="/?tag={tag}" rel="prefetch"> #{tag} </a>
+				{/each}
+			</div>
+			 <Articles {articles} />
+		 </div>
+	
+		 <div class="side col-span-4">
+			 <SideCard />
+
+			 <div class="chart my-10">
+				
+			 </div>
+		 </div>
+	 </div>
+</div>
+
+<footer>
+
+</footer>
+

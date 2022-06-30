@@ -1,6 +1,6 @@
 <script>
 	import { session } from '$app/stores';
-	import MentorPreview from './MentorPreview.svelte';
+	import PostPreview from './PostPreview.svelte';
 	export let articles;
 </script>
 
@@ -9,7 +9,7 @@
 {:else}
 	<div>
 		{#each articles as article (article.slug)}
-			<MentorPreview {article} user={$session.user} />
+			<PostPreview {article} user={$session.user} />
 		{/each}
 	</div>
 {/if}
