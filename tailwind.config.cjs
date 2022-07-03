@@ -12,8 +12,8 @@ module.exports = {
 			colors: {
 				transparent: 'transparent',
 				current: 'currentColor',
-				'my-yellow': '#ffaf1c',
-				'my-black': '#252521'
+				'my-yellow' : '#ffaf1c',
+				'my-black' : '#252521',
 			}
 		}
 	},

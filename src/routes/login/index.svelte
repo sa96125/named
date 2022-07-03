@@ -42,7 +42,6 @@
 			placeholder="p a s s w o r d"
 			class="login-input"
 		/>
-
 		<button type="submit" class="m-4" />
 	</form>
 
@@ -62,15 +61,17 @@
 		border: 1px solid black !important;
 		color: black !important;
 	}
+
 	button {
-		width: 30px;
-		height: 30px;
+		width:30px;
+		height:30px;
 		background-image: url('/icons/login.svg');
 		background-repeat: no-repeat;
-		opacity: 0.1;
+		opacity: .1;
 	}
+
 	input:focus + button {
-		transition: opacity 0.4s;
+		transition: opacity .4s;
 		opacity: 1;
 	}
 </style>

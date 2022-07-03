@@ -2,17 +2,16 @@
 	import * as api from '$lib/api.js';
 	export let article;
 
-
 	const onClickArticle = () => {
 		console.log(article)
 	}
 </script>
 
 <article class="py-12">
-	<div class="article-meta flex justify-between items-center">
-		<div>
-			<span>
-				<img class='' src={article.author.image} alt={article.author.username} />
+	<div class="flex justify-between items-center">
+		<div class=" flex items-center gap-3">
+			<span class="w-10 h-10 bg-slate-100 rounded-full">
+				<!-- <img class=" bg-slate-100 w-10 h-10" alt={article.author.username} /> -->
 			</span>
 			<span class="info">
 				<p class="author"> {article.author.username} </p>
@@ -29,7 +28,7 @@
 	</div>
 
 	<div on:click={onClickArticle} href="/article/{article.slug}" rel="prefetch" class="my-4">
-		<h1 class="text-3xl font-bold">{article.title}</h1>
+		<h1 class="text-3xl font-semibold">{article.title}</h1>
 		<p class="text-xl text-zinc-500">{article.description}</p>
 	</div>
 
