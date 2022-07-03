@@ -1,6 +1,11 @@
 <script>
 	import { page, session } from '$app/stores';
+	import { enhance } from '$lib/actions/form';
 	let y;
+
+	const processDeleteSession = () => {
+		$session.userId = null;
+	};
 </script>
 
 <svelte:window bind:scrollY={y} />
@@ -29,10 +34,15 @@
 					>Sign In</a
 				>
 			{:else}
-				<form action="/api/auth/logout.json" method="post">
+				<form
+					action="/api/auth/logout.json"
+					method="post"
+					use:enhance={{ result: processDeleteSession }}
+				>
 					<button
 						class="bg-black text-xs font-mono text-neutral-50 px-5 py-2 rounded-sm"
-						type="submit">Sign Out
+						type="submit"
+					>Sign Out
 					</button>
 				</form>
 			{/if}
