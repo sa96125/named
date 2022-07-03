@@ -42,7 +42,6 @@
 			<a class="yellow-link" href="/">create account</a>
 		</p>
 	</div>
->>>>>>> d4922b67dde8f7b0fee58f4c3ffbd84b9641a9bf
 </main>
 
 <style>

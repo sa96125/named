@@ -32,13 +32,11 @@
 </svelte:head>
 
 <!-- * hero -->
-<div class="bg-[#ffaf1c] font-sans text-black overflow-hidden h-auto border-b-[1px] border-black">
-	<div class="max-w-7xl m-auto py-10  ">
-		<p class="logo-font text-8xl">Don't pay for develop.</p>
-		<p class="logo-font text-6xl">A place to share your knowledge.</p>
-		<p class="logo-font text-6xl">A place to share your knowledge.</p>
-		<p class="logo-font text-6xl">A place to share your knowledge.</p>
-		<p class="logo-font text-6xl">A place to share your knowledge.</p>
+<div class="bg-[#ffaf1c] h-96 text-black overflow-hidden border-b-[1px] border-black">
+	<div class="max-w-7xl m-auto py-10">
+		<p class="font-display text-8xl mb-5">Don't pay for develop.</p>
+		<p class="font-sans text-2xl">당신이 꿈꾸는 개발자가 되도록</p>
+		<p class="font-sans text-2xl">선한 영향력을 주는 개발자를 소개해드릴게요.</p>
 	</div>
 </div>
 
