@@ -9,7 +9,7 @@
 {:else}
 	<div>
 		{#each articles as article (article.slug)}
-			<ArticlePreview {article} user={$session.user} />
+			<ArticlePreview {article} />
 		{/each}
 	</div>
 {/if}

@@ -6,8 +6,6 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				display: ['noe', ...fontFamily.sans],
-				sans: ['titillium', ...fontFamily.sans],
-				studio: ['studio', ...fontFamily.sans]
 			},
 			colors: {
 				transparent: 'transparent',

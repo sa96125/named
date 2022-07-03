@@ -41,6 +41,7 @@
 			aria-label="login Password"
 			placeholder="p a s s w o r d"
 			class="login-input"
+			autocomplete="on"
 		/>
 		<button type="submit" class="m-4" />
 	</form>
@@ -63,15 +64,15 @@
 	}
 
 	button {
-		width:30px;
-		height:30px;
+		width: 30px;
+		height: 30px;
 		background-image: url('/icons/login.svg');
 		background-repeat: no-repeat;
-		opacity: .1;
+		opacity: 0.1;
 	}
 
 	input:focus + button {
-		transition: opacity .4s;
+		transition: opacity 0.4s;
 		opacity: 1;
 	}
 </style>
