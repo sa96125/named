@@ -1,7 +1,7 @@
 <script context="module">
 	// URL의 params도 같이 붙여서 넘긴다.
 	export async function load({ url, fetch }) {
-		const [{ articles, pages }, { tags }] = await Promise.all([
+		const [{ articles }, { tags }] = await Promise.all([
 			fetch(`/api/articles.json${url.search}`, { credentials: 'include' }).then((response) => response.json()),
 			fetch('/api/tags.json').then((response) => response.json())
 		]);
@@ -9,7 +9,6 @@
 		return {
 			props: {
 				articles,
-				pages,
 				tags
 			}
 		};
@@ -22,7 +21,7 @@
 	import SideCard from '$lib/components/SideCard.svelte'
 	export let articles;
 	export let tags;
-	$: tag = $page.url.searchParams.get('tag');
+	// $: tag = $page.url.searchParams.get('tag');
 	// $: p = +$page.url.searchParams.get('p') || 1;
 	// $: page_link_base = tag ? `tag=${tag}` : `tab=${tab}`;
 </script>
