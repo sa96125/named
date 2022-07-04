@@ -1,0 +1,23 @@
+datasource db {
+  provider = "postgresql"
+  url = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native"]
+}
+
+model User {
+  uid        String  @id @default(cuid())
+  created_at DateTime
+  email      String
+  password   Boolean
+}
+
+model Article {
+  uid        String  @id @default(cuid())
+  created_at DateTime
+  email      String
+  password   Boolean
+}
