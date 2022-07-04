@@ -1,11 +1,10 @@
 import * as cookie from 'cookie';
-import pkg from 'jsonwebtoken';
-const { verify } = pkg;
+import { verify } from 'jsonwebtoken';
 
 export async function handle({ event, resolve }) {
 	const cookies = cookie.parse(event.request.headers.get('cookie') || '');
-	const jwt = cookies.jwt && verify(cookies.jwt, import.meta.env.VITE_SECRET_KEY);
-	event.locals.userId = jwt ? JSON.parse(jwt) : null;
+	const uid = cookies.jwt && verify(cookies.jwt, import.meta.env.VITE_SECRET_KEY);
+	event.locals.userId = uid ? uid : null;
 	return await resolve(event);
 }
 

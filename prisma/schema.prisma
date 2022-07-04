@@ -1,6 +1,6 @@
 datasource db {
   provider = "postgresql"
-  url = env("DATABASE_URL")
+  url = env("VITE_DATABASE_URL")
 }
 
 generator client {
@@ -14,11 +14,4 @@ model User {
   email     String   @unique
   password  String
   name      String?
-}
-
-model Article {
-  uid        String  @id @default(cuid())
-  created_at DateTime
-  email      String
-  password   Boolean
 }
