@@ -11,7 +11,7 @@
 
 <nav
 	class="z-10 py-4 bg-[#fffefa] border-b-[1px] sticky top-0 border-black transition duration-500 ease-linear 
-	{y > 150 || $page.url.pathname !== '/' ? 'text-neutral-50 bg-[#252521] text-xs py-1' : ''}"
+	{y > 150 || $page.url.pathname !== '/' ? 'bg-[#ffd1b9] text-xs py-1' : ''}"
 >
 	<div class=" max-w-7xl m-auto flex items-center justify-between">
 		<span class=" flex items-center justify-between gap-5">
@@ -20,31 +20,24 @@
 				{y > 150 || $page.url.pathname !== '/' ? 'text-sm py-1' : ''}"
 				href="/"
 			>
-				 Binary
+			Ops
 			</a>
 		</span>
-		<span class="text-md focus:font-semibold flex gap-7 items-center ">
+		<span class="text-sm font-mono focus:font-semibold flex gap-7 items-center ">
 			<a href="/studykit">Blog</a>
-			<a href="/studykit">Let's learn</a>
 			<a href="/studykit">Community</a>
-			<a href="/studykit">Support us</a>
 			{#if !$session.userId}
-				<a class="bg-black text-xs font-mono text-neutral-50 px-5 py-2 rounded-sm" href="/login"
-					>Sign In</a
-				>
+				<a href="/login">Sign-In</a>
 			{:else}
 				<form
 					action="/api/auth/logout.json"
 					method="post"
 					use:enhance={{ result: processDeleteSession }}
 				>
-					<button
-						class="bg-black text-xs font-mono text-neutral-50 px-5 py-2 rounded-sm"
-						type="submit"
-					>Sign Out
-					</button>
+					<button type="submit">Sign-Out</button>
 				</form>
 			{/if}
+			<a class="bg-black text-xs font-mono text-neutral-50 px-5 py-2 rounded-sm" href="/studykit">Join</a>
 		</span>
 	</div>
 </nav>

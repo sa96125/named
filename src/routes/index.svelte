@@ -19,6 +19,7 @@
 	import { page } from '$app/stores';
 	import Articles from '$lib/components/Articles/index.svelte';
 	import SideCard from '$lib/components/SideCard.svelte'
+	const src = '/images/computer.jpeg'
 	export let articles;
 	export let tags;
 	// $: tag = $page.url.searchParams.get('tag');
@@ -31,10 +32,11 @@
 </svelte:head>
 
 <!-- * hero -->
-<div class="bg-[#fffefa] h-96 text-black overflow-hidden border-b-[1px] border-black">
-	<div class="max-w-7xl m-auto py-10 font-pixel font-bold text-8xl text-[#ff0000]">
-		<p>Don't pay for develop.</p>
-		<p>Just do Somthing.</p> 
+<div class="bg-[#fffefa] h-96 text-black overflow-hidden border-b-[1px] border-black ">
+	<div class="max-w-7xl m-auto py-10 font-pixel text-9xl text-[#ff0000] relative">
+		<h1 class=" font-display text-center">A living network of curious minds.</h1>
+		<!-- <p>Don't pay for develop.</p>
+		<p>Just do Somthing.</p>  -->
 		<!-- <p class="font-sans text-2xl">당신이 꿈꾸는 개발자가 되도록</p>
 		-->
 	</div>
@@ -42,7 +44,7 @@
 
 
 <!-- * content -->
-<div class="max-w-7xl m-auto ">
+<div class="max-w-7xl m-auto">
 	 <div class="grid grid-cols-12 gap-16 py-10">
 		 <div class="feeds col-span-8">
 			<div class="nav flex gap-5 font-mono border-b-[1px] ">
