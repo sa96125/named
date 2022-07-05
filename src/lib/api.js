@@ -1,4 +1,4 @@
-const base = 'https://conduit.productionready.io/api';
+import { base } from './constants'
 
 async function send({ method, path, data, token }) {
 	const opts = { method, headers: {} };

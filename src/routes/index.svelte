@@ -31,18 +31,19 @@
 </svelte:head>
 
 <!-- * hero -->
-<div class="bg-[#ffaf1c] h-96 text-black overflow-hidden border-b-[1px] border-black">
-	<div class="max-w-7xl m-auto py-10">
-		<p class="font-display text-8xl mb-5">Don't pay for develop.</p>
-		<p class="font-sans text-2xl">당신이 꿈꾸는 개발자가 되도록</p>
-		<p class="font-sans text-2xl">선한 영향력을 주는 개발자를 소개해드릴게요.</p>
+<div class="bg-[#fffefa] h-96 text-black overflow-hidden border-b-[1px] border-black">
+	<div class="max-w-7xl m-auto py-10 font-pixel font-bold text-8xl text-[#ff0000]">
+		<p>Don't pay for develop.</p>
+		<p>Just do Somthing.</p> 
+		<!-- <p class="font-sans text-2xl">당신이 꿈꾸는 개발자가 되도록</p>
+		-->
 	</div>
 </div>
 
 
 <!-- * content -->
 <div class="max-w-7xl m-auto ">
-	 <div class="grid grid-cols-12 gap-16 py-5">
+	 <div class="grid grid-cols-12 gap-16 py-10">
 		 <div class="feeds col-span-8">
 			<div class="nav flex gap-5 font-mono border-b-[1px] ">
 				<a class="bg-black text-white p-2" href="/">#all</a>

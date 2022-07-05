@@ -10,6 +10,22 @@
 	src: url('/fonts/Noe Display Medium.ttf') format('woff2');
 }
 
+@font-face {
+	font-family: 'work';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/work.ttf') format('woff2');
+}
+
+@font-face {
+	font-family: 'pixel';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/pixel.ttf') format('woff2');
+}
+
 @layer base {
 	h2 {
 		@apply font-sans text-4xl font-bold;
@@ -27,10 +43,6 @@
 
 	.p-xs {
 		@apply font-sans text-xs;
-	}
-
-	.yellow-link {
-		@apply text-amber-400 border-b-[1px] border-amber-400;
 	}
 
 	.login-input {

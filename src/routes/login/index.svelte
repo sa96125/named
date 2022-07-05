@@ -51,7 +51,7 @@
 		<p>Email 또는 Password를 잊으셨나요?</p>
 		<p>
 			계정이 없으신가요?
-			<a class="yellow-link" href="/">create account</a>
+			<a class="text-blue-400 border-b-[1px] border-blue-400" href="/">create account</a>
 		</p>
 	</div>
 </main>

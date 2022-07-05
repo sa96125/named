@@ -2,7 +2,6 @@
 	import { page, session } from '$app/stores';
 	import { enhance } from '$lib/actions/form';
 	let y;
-
 	const processDeleteSession = () => {
 		$session.userId = null;
 	};
@@ -11,17 +10,17 @@
 <svelte:window bind:scrollY={y} />
 
 <nav
-	class="z-10 py-4 bg-[#ffaf1c] border-b-[1px] sticky top-0 border-black transition duration-500 ease-linear 
-	{y > 150 || $page.url.pathname !== '/' ? 'bg-[#252521] text-white text-xs py-1' : ''}"
+	class="z-10 py-4 bg-[#fffefa] border-b-[1px] sticky top-0 border-black transition duration-500 ease-linear 
+	{y > 150 || $page.url.pathname !== '/' ? 'text-neutral-50 bg-[#252521] text-xs py-1' : ''}"
 >
 	<div class=" max-w-7xl m-auto flex items-center justify-between">
 		<span class=" flex items-center justify-between gap-5">
 			<a
-				class="font-display text-2xl border-black
-				{y > 150 || $page.url.pathname !== '/' ? 'text-white text-sm py-1' : ''}"
+				class="flex gap-2 font-display text-2xl border-black
+				{y > 150 || $page.url.pathname !== '/' ? 'text-sm py-1' : ''}"
 				href="/"
 			>
-				P h i
+				 Binary
 			</a>
 		</span>
 		<span class="text-md focus:font-semibold flex gap-7 items-center ">

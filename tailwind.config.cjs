@@ -6,6 +6,8 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				display: ['noe', ...fontFamily.sans],
+				work: ['work', ...fontFamily.sans],
+				pixel: ['pixel', ...fontFamily.sans],
 			},
 			colors: {
 				transparent: 'transparent',
