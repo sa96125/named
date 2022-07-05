@@ -1,5 +1,6 @@
 import * as cookie from 'cookie';
-import { verify } from 'jsonwebtoken';
+import pkg from 'jsonwebtoken';
+const { verify } = pkg;
 
 export async function handle({ event, resolve }) {
 	const cookies = cookie.parse(event.request.headers.get('cookie') || '');
