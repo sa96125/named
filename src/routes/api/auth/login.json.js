@@ -1,4 +1,5 @@
 import { sign } from 'jsonwebtoken';
+import { secretKey } from '$lib/constants';
 import PrismaClient from "$lib/prisma"
 
 const prisma = new PrismaClient();
@@ -26,7 +27,7 @@ export const post = async ({ request }) => {
 	// - !passwordCorrect  return incorrect error.
 
 	// TODO: return JWT(id)
-	const jwt = sign(user.uid, import.meta.env.VITE_SECRET_KEY);
+	const jwt = sign(user.uid, secretKey);
 	return {
 		status: 302,
 		headers: {
