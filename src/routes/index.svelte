@@ -1,14 +1,16 @@
 <script context="module">
 	// URL의 params도 같이 붙여서 넘긴다.
 	export async function load({ url, fetch }) {
-		const [{ articles }, { tags }] = await Promise.all([
+		const [{ articles }, { celebrities }, { tags }  ] = await Promise.all([
 			fetch(`/api/articles.json${url.search}`, { credentials: 'include' }).then((response) => response.json()),
-			fetch('/api/tags.json').then((response) => response.json())
+			fetch('/api/celebrities').then((response) => response.json()),
+			fetch('/api/tags').then((response) => response.json()),
 		]);
 
 		return {
 			props: {
 				articles,
+				celebrities,
 				tags
 			}
 		};
@@ -21,6 +23,8 @@
 	import SideCard from '$lib/components/SideCard.svelte'
 	const src = '/images/computer.jpeg'
 	export let articles;
+	export let celebrities;
+	console.log(celebrities)
 	export let tags;
 	// $: tag = $page.url.searchParams.get('tag');
 	// $: p = +$page.url.searchParams.get('p') || 1;
@@ -32,8 +36,8 @@
 </svelte:head>
 
 <!-- * hero -->
-<div class="bg-[#fffefa] h-96 text-black overflow-hidden border-b-[1px] border-black ">
-	<div class="max-w-7xl m-auto py-10 font-pixel text-9xl text-[#ff0000] relative">
+<div class="bg-[#fffefa] h-auto text-black overflow-hidden border-b-[1px] border-black ">
+	<div class="max-w-7xl m-auto py-28 font-pixel text-9xl text-[#ff0000] relative">
 		<h1 class=" font-display text-center">A living network of curious minds.</h1>
 		<!-- <p>Don't pay for develop.</p>
 		<p>Just do Somthing.</p>  -->

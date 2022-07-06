@@ -26,6 +26,17 @@
 	src: url('/fonts/pixel.ttf') format('woff2');
 }
 
+@font-face {
+	font-family: 'nautigal';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/nautigal.ttf') format('woff2');
+}
+
+
+
+
 @layer base {
 	h2 {
 		@apply font-sans text-4xl font-bold;

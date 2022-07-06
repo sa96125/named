@@ -2,6 +2,12 @@
 	import { page, session } from '$app/stores';
 	import { enhance } from '$lib/actions/form';
 	let y;
+
+	const configLogoutForm = {
+		action: "/api/auth/logout",
+		method: "post"
+	}
+
 	const processDeleteSession = () => {
 		$session.userId = null;
 	};
@@ -16,11 +22,11 @@
 	<div class=" max-w-7xl m-auto flex items-center justify-between">
 		<span class=" flex items-center justify-between gap-5">
 			<a
-				class="flex gap-2 font-display text-2xl border-black
+				class="flex gap-2 font-display font-medium text-2xl border-black
 				{y > 150 || $page.url.pathname !== '/' ? 'text-sm py-1' : ''}"
 				href="/"
 			>
-			Ops
+			Named
 			</a>
 		</span>
 		<span class="text-sm font-mono focus:font-semibold flex gap-7 items-center ">
@@ -30,8 +36,7 @@
 				<a href="/login">Sign-In</a>
 			{:else}
 				<form
-					action="/api/auth/logout.json"
-					method="post"
+					{...configLogoutForm}
 					use:enhance={{ result: processDeleteSession }}
 				>
 					<button type="submit">Sign-Out</button>

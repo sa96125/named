@@ -10,39 +10,39 @@
 	}
 </script>
 
-<script>
-	const title = '로그인 하기';
-</script>
-
 <svelte:head>
-	<title>{title}</title>
+	<title>{'Sign In | Named'}</title>
 </svelte:head>
 
 <main class="flex-center flex-col">
 	<h2 class="mb-16">당신의 경험을 기여해주세요.</h2>
-	<h4>{title}</h4>
+	<h4>로그인 하기</h4>
 
 	<form
-		action="/api/auth/login.json"
+		action="/api/auth/login"
 		method="post"
 		class="flex-center flex-col w-full max-w-sm px-10 mt-2"
 	>
-		<input
-			name="email"
-			type="email"
-			aria-label="login Email"
-			placeholder="e - m a i l"
-			class="login-input"
-		/>
+		<fieldset class="w-full">
+			<input
+				name="email"
+				type="email"
+				aria-label="login Email"
+				placeholder="e - m a i l"
+				class="login-input"
+			/>
+		</fieldset>
 
-		<input
-			name="password"
-			type="password"
-			aria-label="login Password"
-			placeholder="p a s s w o r d"
-			class="login-input"
-			autocomplete="on"
-		/>
+		<fieldset class="w-full">
+			<input
+				name="password"
+				type="password"
+				aria-label="login Password"
+				placeholder="p a s s w o r d"
+				class="login-input"
+				autocomplete="on"
+			/>
+		</fieldset>
 		<button type="submit" class="m-4" />
 	</form>
 

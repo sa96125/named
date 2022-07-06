@@ -7,7 +7,7 @@ module.exports = {
 			fontFamily: {
 				display: ['noe', ...fontFamily.sans],
 				work: ['work', ...fontFamily.sans],
-				pixel: ['pixel', ...fontFamily.sans],
+				nautigal: ['nautigal', ...fontFamily.sans],
 			},
 			colors: {
 				transparent: 'transparent',
