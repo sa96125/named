@@ -22,6 +22,7 @@
 	<div class=" max-w-7xl m-auto flex items-center justify-between">
 		<span class=" flex items-center justify-between gap-5">
 			<a
+				sveltekit:prefetch
 				class="flex gap-2 font-display font-medium text-2xl border-black
 				{y > 150 || $page.url.pathname !== '/' ? 'text-sm py-1' : ''}"
 				href="/"
@@ -30,10 +31,10 @@
 			</a>
 		</span>
 		<span class="text-sm font-mono focus:font-semibold flex gap-7 items-center ">
-			<a href="/studykit">Blog</a>
-			<a href="/studykit">Community</a>
+			<a sveltekit:prefetch href="/studykit">Blog</a>
+			<a sveltekit:prefetch href="/studykit">Community</a>
 			{#if !$session.userId}
-				<a href="/login">Sign-In</a>
+				<a sveltekit:prefetch href="/login">Sign-In</a>
 			{:else}
 				<form
 					{...configLogoutForm}

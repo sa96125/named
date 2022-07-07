@@ -34,10 +34,6 @@
 <div class="bg-[#fffefa] h-auto text-black overflow-hidden border-b-[1px] border-black ">
 	<div class="max-w-7xl m-auto py-28 font-pixel text-9xl text-[#ff0000] relative">
 		<h1 class=" font-display text-center">A living network of curious minds.</h1>
-		<!-- <p>Don't pay for develop.</p>
-		<p>Just do Somthing.</p>  -->
-		<!-- <p class="font-sans text-2xl">당신이 꿈꾸는 개발자가 되도록</p>
-		-->
 	</div>
 </div>
 
