@@ -6,11 +6,9 @@ export async function get({ url: { searchParams } }) {
 	const tag = searchParams.get('tag');
 	// const page = +searchParams.get('page') || 1;
 	// const jwt = locals.user && locals.user.token;
-
 	// pages: Math.ceil(articlesCount / page_size)
-
 	let celebrities;
-
+	
 	if (tag) {
 		celebrities = await prisma.celebrity.findMany({
 			where: {
@@ -35,9 +33,6 @@ export async function get({ url: { searchParams } }) {
 	}
 
 	return {
-		headers: {
-			'cache-control': 'public, max-age=300'
-		},
 		body: {
 			celebrities
 		}

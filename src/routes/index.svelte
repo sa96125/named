@@ -46,13 +46,9 @@
 	<div class="grid grid-cols-12 gap-16 py-10">
 		<div class="feeds col-span-8">
 			<div class="nav flex gap-5 font-mono border-b-[1px] ">
-				<a class="nav-item p-2 hover:bg-black hover:text-white {selectedTag ? 'text-zinc-400': 'bg-black text-white'}" href="/">#all</a>
+				<a class="nav-item p-2 hover:bg-black hover:text-white {selectedTag ? 'text-zinc-400 bg-white': 'bg-black text-white'}" href="/">#all</a>
 				{#each tags as tag}
-					<a
-						href="/?tag={tag}"
-						rel="prefetch"
-						class="nav-item p-2  hover:bg-black hover:text-white {tag === selectedTag ? 'bg-black text-white': 'text-zinc-400 '}"
-					>
+					<a href="/?tag={tag}" rel="prefetch" class="nav-item p-2  hover:bg-black hover:text-white {tag === selectedTag ? 'bg-black text-white': 'text-zinc-400'}">
 						#{tag}
 					</a>
 				{/each}
@@ -62,8 +58,6 @@
 
 		<div class="side col-span-4">
 			<SideCard />
-
-			<div class="chart my-10" />
 		</div>
 	</div>
 </div>
