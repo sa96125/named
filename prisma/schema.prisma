@@ -1,65 +1,93 @@
 datasource db {
   provider = "postgresql"
-  url = env("VITE_DATABASE_URL")
+  url      = env("VITE_DATABASE_URL")
 }
 
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
   binaryTargets = ["native"]
 }
 
 model User {
-  uid       String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  email     String   @unique
-  password  String
-  name      String?
+  id             String          @id @default(uuid())
+  name           String?
+  email          String          @unique
+  password       String
+  isAdmin        Boolean?
+  role           Role            @default(BASIC)
+  writtenPosts   Post[]          @relation("WrittenPosts")
+  favoritePosts  Post[]          @relation("FavoritePosts")
+  userPreference UserPreference?
+  comment        Comment?
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  @@index([email])
+}
+
+model UserPreference {
+  id           String  @id @default(uuid())
+  emailUpdates Boolean
+  user         User?   @relation(fields: [userId], references: [id])
+  userId       String? @unique
+}
+
+model Post {
+  id            String   @id @default(uuid())
+  title         String
+  rating        Float
+  author        User?    @relation("WrittenPosts", fields: [authorId], references: [id])
+  authorId      String?
+  favoritedBy   User?    @relation("FavoritePosts", fields: [favoritedById], references: [id])
+  favoritedById String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 }
 
 model Celebrity {
-  id          Int         @id @default(autoincrement())
-  createdAt   DateTime    @default(now())
-  thumbnail   String?
-  name        String?
-  title       String
-  description String
-  platfomes   Platform[]
-  tags        Tag[]
+  id              String           @id @default(uuid())
+  name            String?
+  thumbnail       String?
+  title           String
+  description     String
+  likes           Int              @default(0)
+  platforms       Platform[]
+  tags            Tag[]
+  celebPreference CelebPreference?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
 }
 
-model Platform {
-  id           Int         @id @default(autoincrement())
-  celebrity    Celebrity   @relation(fields: [celebrityId], references: [id])
-  celebrityId  Int  
-  name         String
+model CelebPreference {
+  id          String    @id @default(uuid())
+  link        String
+  comments    Comment[]
+  celebrity   Celebrity @relation(fields: [celebrityId], references: [id])
+  celebrityId String    @unique
+}
+
+model Comment {
+  id                String           @id @default(uuid())
+  CelebPreference   CelebPreference? @relation(fields: [celebPreferenceId], references: [id])
+  celebPreferenceId String?
+  user              User             @relation(fields: [userId], references: [id])
+  userId            String           @unique
 }
 
 model Tag {
-  id           Int         @id @default(autoincrement())
-  celebrity    Celebrity   @relation(fields: [celebrityId], references: [id])
-  celebrityId  Int  
-  name         String
+  id          String      @id @default(uuid())
+  name        String      @unique
+  celebrities Celebrity[]
 }
 
-// model PlatfomesOnCelebrities {
-//   celebrity       Celebrity     @relation(fields: [celebrityId], references: [id])
-//   celebrityId     Int 
-//   platform        Platform      @relation(fields: [platformId], references: [id])
-//   platformId      Int
-//   assignedAt      DateTime      @default(now())
-//   assignedBy      String
+model Platform {
+  id          String      @id @default(uuid())
+  name        String      @unique
+  celebrities Celebrity[]
+}
 
-//   @@id([celebrityId, platformId])
-// }
-
-// model TagsOnCelebrities {
-//   celebrity       Celebrity     @relation(fields: [celebrityId], references: [id])
-//   celebrityId     Int 
-//   tag             Tag           @relation(fields: [tagId], references: [id])
-//   tagId           Int
-//   assignedAt      DateTime      @default(now())
-//   assignedBy      String
-
-//   @@id([celebrityId, tagId])
-// }
-
+enum Role {
+  BASIC
+  EXPERT
+  ADMIN
+}
