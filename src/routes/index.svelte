@@ -21,6 +21,10 @@
 	export let celebrities;
 	export let tags;
 
+	console.log('셀럽들 : ',celebrities)
+	console.log('태그들 : ',tags)
+
+
 	$: selectedTag = $page.url.searchParams.get('tag');
 	// $: p = +$page.url.searchParams.get('p') || 1;
 	// $: page_link_base = tag ? `tag=${tag}` : `tab=${tab}`;
