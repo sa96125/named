@@ -27,7 +27,7 @@ export const post = async ({ request }) => {
 	// - !passwordCorrect  return incorrect error.
 
 	// TODO: return JWT(id)
-	const jwt = sign(user.uid, secretKey);
+	const jwt = sign(user.id, secretKey);
 	return {
 		status: 302,
 		headers: {

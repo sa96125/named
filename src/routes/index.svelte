@@ -1,15 +1,12 @@
 <script context="module">
-	// URL의 params도 같이 붙여서 넘긴다.
 	export async function load({ url, fetch }) {
-		const [{ articles }, { celebrities }, { tags }  ] = await Promise.all([
-			fetch(`/api/articles.json${url.search}`, { credentials: 'include' }).then((response) => response.json()),
-			fetch('/api/celebrities').then((response) => response.json()),
-			fetch('/api/tags').then((response) => response.json()),
+		const [{ celebrities }, { tags }] = await Promise.all([
+			fetch(`/api/celebrities${url.search}` , { credentials: 'include' }).then((response) => response.json()),
+			fetch('/api/tags').then((response) => response.json())
 		]);
 
 		return {
 			props: {
-				articles,
 				celebrities,
 				tags
 			}
@@ -19,14 +16,12 @@
 
 <script>
 	import { page } from '$app/stores';
-	import Articles from '$lib/components/Articles/index.svelte';
-	import SideCard from '$lib/components/SideCard.svelte'
-	const src = '/images/computer.jpeg'
-	export let articles;
+	import Celebrities from '$lib/components/Celebrities/index.svelte';
+	import SideCard from '$lib/components/SideCard.svelte';
 	export let celebrities;
-	console.log(celebrities)
 	export let tags;
-	// $: tag = $page.url.searchParams.get('tag');
+
+	$: selectedTag = $page.url.searchParams.get('tag');
 	// $: p = +$page.url.searchParams.get('p') || 1;
 	// $: page_link_base = tag ? `tag=${tag}` : `tab=${tab}`;
 </script>
@@ -46,31 +41,31 @@
 	</div>
 </div>
 
-
 <!-- * content -->
 <div class="max-w-7xl m-auto">
-	 <div class="grid grid-cols-12 gap-16 py-10">
-		 <div class="feeds col-span-8">
+	<div class="grid grid-cols-12 gap-16 py-10">
+		<div class="feeds col-span-8">
 			<div class="nav flex gap-5 font-mono border-b-[1px] ">
-				<a class="bg-black text-white p-2" href="/">#all</a>
+				<a class="nav-item p-2 hover:bg-black hover:text-white {selectedTag ? 'text-zinc-400': 'bg-black text-white'}" href="/">#all</a>
 				{#each tags as tag}
-						<a class="nav-item p-2 text-zinc-400 hover:bg-black hover:text-white { tag ? '':''}" href="/?tag={tag}" rel="prefetch"> #{tag} </a>
+					<a
+						href="/?tag={tag}"
+						rel="prefetch"
+						class="nav-item p-2  hover:bg-black hover:text-white {tag === selectedTag ? 'bg-black text-white': 'text-zinc-400 '}"
+					>
+						#{tag}
+					</a>
 				{/each}
 			</div>
-			 <Articles {articles} />
-		 </div>
-	
-		 <div class="side col-span-4">
-			 <SideCard />
+			<Celebrities {celebrities} />
+		</div>
 
-			 <div class="chart my-10">
-				
-			 </div>
-		 </div>
-	 </div>
+		<div class="side col-span-4">
+			<SideCard />
+
+			<div class="chart my-10" />
+		</div>
+	</div>
 </div>
 
-<footer>
-
-</footer>
-
+<footer />
