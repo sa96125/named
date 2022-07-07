@@ -23,26 +23,22 @@
 		method="post"
 		class="flex-center flex-col w-full max-w-sm px-10 mt-2"
 	>
-		<fieldset class="w-full">
-			<input
-				name="email"
-				type="email"
-				aria-label="login Email"
-				placeholder="e - m a i l"
-				class="login-input"
-			/>
-		</fieldset>
+		<input
+			name="email"
+			type="email"
+			aria-label="login Email"
+			placeholder="e - m a i l"
+			class="login-input"
+		/>
 
-		<fieldset class="w-full">
-			<input
-				name="password"
-				type="password"
-				aria-label="login Password"
-				placeholder="p a s s w o r d"
-				class="login-input"
-				autocomplete="on"
-			/>
-		</fieldset>
+		<input
+			name="password"
+			type="password"
+			aria-label="login Password"
+			placeholder="p a s s w o r d"
+			class="login-input"
+			autocomplete="on"
+		/>
 		<button type="submit" class="m-4" />
 	</form>
 

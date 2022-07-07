@@ -9,7 +9,6 @@ CREATE TABLE "User" (
     "password" TEXT NOT NULL,
     "isAdmin" BOOLEAN,
     "role" "Role" NOT NULL DEFAULT 'BASIC',
-    "preferences" JSONB,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
