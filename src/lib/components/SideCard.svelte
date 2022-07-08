@@ -11,34 +11,34 @@
 
 			<div class="grid grid-cols-3 gap-10">
 				<span class=" col-span-1">
-					<h3 class=" font-serif text-xs font-extralight text-stone-500">Author</h3>
-					<h4 class=" text-sm">Nicolas</h4>
+					<p class=" font-serif text-xs font-extralight text-stone-500">Author</p>
+					<p class=" text-sm">Nicolas</p>
 				</span>
 				<span class=" col-span-1">
-					<h3 class="  font-serif text-xs font-extralight text-stone-500">Stack</h3>
-					<h4 class=" text-sm">Full stack</h4>
+					<p class="  font-serif text-xs font-extralight text-stone-500">Stack</p>
+					<p class=" text-sm">Full stack</p>
 				</span>
 				<span class=" col-span-1">
-					<h3 class=" font-serif text-xs font-extralight text-stone-500">Links</h3>
-					<h4 class=" text-sm">Free | Pay</h4>
+					<p class=" font-serif text-xs font-extralight text-stone-500">Links</p>
+					<p class=" text-sm">Free | Pay</p>
 				</span>
 			</div>
 
 
 			<div>
-				<h3 class="  font-serif text-xs font-extralight text-stone-500">About.</h3>
-				<h2 class=" text-base font-semibold">
+				<p class="  font-serif text-xs font-extralight text-stone-500">About.</p>
+				<p class=" text-base font-semibold">
 					Nomad Coders <br /> Clone Startups. Learn to Code.
-				</h2>
-				<h4 class=" text-sm font-extralight">
+				</p>
+				<p class=" text-sm font-extralight">
 					코딩은 진짜를 만들어보는거야!. 실제 구현되어 있는 서비스를 한땀 한땀 따라 만들면서 코딩을 배우세요!
-				</h4>
+				</p>
 			</div>
 		
 		
 			<div>
-				<h3 class="  font-serif text-xs font-extralight text-stone-500">Comments</h3>
-				<h4 class=" text-sm">Read more..</h4>
+				<p class="  font-serif text-xs font-extralight text-stone-500">Comments</p>
+				<p class=" text-sm">Read more..</p>
 			</div>
 	</div>
 
