@@ -3,7 +3,7 @@
 </script>
 
 
-<div class="h-auto sticky top-[100px] bg-[#fefff7] shadow-md rounded-sm">
+<div class="h-auto sticky top-[100px] bg-[#fefffb] shadow-md rounded-sm">
 
 	<img class="w-full mx-auto rounded-t-sm"  {src} alt="dev" />
 

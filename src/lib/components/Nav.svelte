@@ -4,9 +4,9 @@
 	let y;
 
 	const configLogoutForm = {
-		action: "/api/auth/logout",
-		method: "post"
-	}
+		action: '/api/auth/logout',
+		method: 'post'
+	};
 
 	const processDeleteSession = () => {
 		$session.userId = null;
@@ -22,28 +22,28 @@
 	<div class=" max-w-7xl m-auto flex items-center justify-between">
 		<span class=" flex items-center justify-between gap-5">
 			<a
-				sveltekit:prefetch
+				rel="prefetch"
 				class="flex gap-2 font-display font-medium text-2xl border-black
 				{y > 150 || $page.url.pathname !== '/' ? 'text-sm py-1' : ''}"
 				href="/"
 			>
-			Named
+				Named
 			</a>
 		</span>
 		<span class="text-sm font-mono focus:font-semibold flex gap-7 items-center ">
-			<a sveltekit:prefetch href="/studykit">Blog</a>
-			<a sveltekit:prefetch href="/studykit">Community</a>
+			<a rel="prefetch" href="/studykit">Learn</a>
+			<a rel="prefetch" href="/studykit">Community</a>
 			{#if !$session.userId}
 				<a sveltekit:prefetch href="/login">Sign-In</a>
 			{:else}
-				<form
-					{...configLogoutForm}
-					use:enhance={{ result: processDeleteSession }}
-				>
+				<form {...configLogoutForm} use:enhance={{ result: processDeleteSession }}>
 					<button type="submit">Sign-Out</button>
 				</form>
 			{/if}
-			<a class="bg-black text-xs font-mono text-neutral-50 px-5 py-2 rounded-sm" href="/studykit">Join</a>
+			<a
+				class="bg-black text-xs font-mono text-neutral-50 px-5 py-2 rounded-sm"
+				href="/studykit">Join</a
+			>
 		</span>
 	</div>
 </nav>
