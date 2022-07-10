@@ -3,13 +3,16 @@
 </script>
 
 
-<div class="h-auto sticky top-[100px] bg-[#fefffb] shadow-md rounded-sm">
+<div class="h-auto bg-[#ffb71d] shadow-md rounded-sm">
 
-	<img class="w-full mx-auto rounded-t-sm"  {src} alt="dev" />
+	<!-- <img class="w-full mx-auto rounded-t-sm"  {src} alt="dev" /> -->
+	<p class="p-5 font-display">
+		We are searching :)
+	</p>
 
-	<div class="flex flex-col p-5 gap-5">
-
-			<div class="grid grid-cols-3 gap-10">
+	<div class="flex flex-col bg-[#ffb71d]  text-white p-5 gap-5">
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis eum explicabo et at mollitia, quasi soluta! Maxime eveniet, vero aut qui modi voluptate praesentium obcaecati nam, nesciunt molestias autem quas tempore nisi quaerat incidunt repellat dolor itaque quis rem consequuntur, ad deserunt nihil. Sequi odit expedita eum, alias officia enim?</p>
+			<!-- <div class="grid grid-cols-3 gap-10">
 				<span class=" col-span-1">
 					<p class=" font-serif text-xs font-extralight text-stone-500">Author</p>
 					<p class=" text-sm">Nicolas</p>
@@ -39,7 +42,7 @@
 			<div>
 				<p class="  font-serif text-xs font-extralight text-stone-500">Comments</p>
 				<p class=" text-sm">Read more..</p>
-			</div>
+			</div> -->
 	</div>
 
 </div>
