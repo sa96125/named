@@ -16,14 +16,10 @@
 
 <script>
 	import { page } from '$app/stores';
-	import Celebrities from '$lib/components/Celebrities/index.svelte';
-	import SideCard from '$lib/components/SideCard.svelte';
 	export let celebrities;
 	export let tags;
 
 	$: selectedTag = $page.url.searchParams.get('tag');
-	// $: p = +$page.url.searchParams.get('p') || 1;
-	// $: page_link_base = tag ? `tag=${tag}` : `tab=${tab}`;
 </script>
 
 <svelte:head>

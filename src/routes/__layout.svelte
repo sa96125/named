@@ -1,9 +1,13 @@
 <script>
+	import { navigating } from '$app/stores';
+	import { loading } from '$store';
 	import '../app.css';
-	import Nav from '$lib/components/Nav.svelte';
+
+	$: loading.setNavigate(!!$navigating);
 </script>
 
 <Nav />
+<Loading />
 <div class=" max-w-full">
 	<slot />
 </div>
