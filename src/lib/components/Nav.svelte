@@ -17,20 +17,21 @@
 
 <nav
 	class="z-10 py-4 bg-[#fffefa] border-b-[1px] sticky top-0 border-black transition duration-500 ease-linear 
-	{y > 150 || $page.url.pathname !== '/' ? 'bg-[#ffd1b9] text-xs py-1' : ''}"
+	{y > 480 || $page.url.pathname !== '/' ? 'bg-[#ffd1b9] text-xs py-1' : ''}"
 >
 	<div class=" max-w-7xl m-auto flex items-center justify-between">
 		<span class=" flex items-center justify-between gap-5">
 			<a
 				rel="prefetch"
-				class="flex gap-2 font-display font-medium text-2xl border-black
-				{y > 150 || $page.url.pathname !== '/' ? 'text-sm py-1' : ''}"
+				class="flex gap-2 font-mono font-medium text-xl border-black
+				{y > 480 || $page.url.pathname !== '/' ? 'text-sm py-1' : ''}"
 				href="/"
 			>
-				Named
+				<img class="w-6" src="/icons/crown.svg" alt="">
 			</a>
 		</span>
-		<span class="text-sm font-mono focus:font-semibold flex gap-7 items-center ">
+		<span class=" font-mono focus:font-semibold flex gap-7 items-center 
+		{y > 480 || $page.url.pathname !== '/' ? 'text-md py-1' : 'text-sm'}">
 			<a rel="prefetch" href="/studykit">Learn</a>
 			<a rel="prefetch" href="/studykit">Community</a>
 			{#if !$session.userId}
