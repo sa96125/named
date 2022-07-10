@@ -18,9 +18,17 @@
 </div>
 
 <div class="h-auto font-work bg-black text-white mb-3  border-[1px] border-black shadow-md rounded-sm">
+	<p class="p-5 pb-1 text-sm">Sponsor</p>
+
+	<div class="flex flex-col text-lg font-thin p-5 pt-0 gap-5">
+		Medium, BoostCamp, DangeunMarket
+	</div>
+
 	<p class="p-5 pb-1 text-sm">Contact</p>
 
 	<div class="flex flex-col text-lg font-thin p-5 pt-0 gap-5">
 		sa96125@gmail.com
 	</div>
 </div>
+
+

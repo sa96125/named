@@ -27,8 +27,8 @@
 </svelte:head>
 
 <!-- * hero -->
-<div class="bg-[#fffefa] h-auto text-black overflow-hidden border-b-[1px] border-black ">
-	<div class="max-w-7xl m-auto py-28 font-pixel text-9xl text-[#ff0000] relative">
+<div class="bg-[#ffd1b9] h-auto text-black overflow-hidden border-b-[1px] border-black ">
+	<div class="max-w-7xl m-auto py-28 font-pixel text-9xl text-[#3c3932] relative">
 		<h1 class=" font-display text-center">A living network of curious minds.</h1>
 	</div>
 </div>

@@ -16,8 +16,8 @@
 <svelte:window bind:scrollY={y} />
 
 <nav
-	class="z-10 py-4 bg-[#fffefa] border-b-[1px] sticky top-0 border-black transition duration-500 ease-linear 
-	{y > 480 || $page.url.pathname !== '/' ? 'bg-[#ffd1b9] text-xs py-1' : ''}"
+	class="z-10 py-4 bg-[#ffd1b9] border-b-[1px] sticky top-0 border-black transition duration-500 ease-linear 
+	{y > 480 || $page.url.pathname !== '/' ? 'bg-[#ffd1b9] text-xs py-1 transition duration-500 ease-linear' : ''}"
 >
 	<div class=" max-w-7xl m-auto flex items-center justify-between">
 		<span class=" flex items-center justify-between gap-5">
@@ -27,7 +27,7 @@
 				{y > 480 || $page.url.pathname !== '/' ? 'text-sm py-1' : ''}"
 				href="/"
 			>
-				<img class="w-6" src="/icons/crown.svg" alt="">
+				<img class="w-8" src="/icons/crown.svg" alt="">
 			</a>
 		</span>
 		<span class=" font-mono focus:font-semibold flex gap-7 items-center 
