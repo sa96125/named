@@ -26,6 +26,7 @@
 		"prisma": "^4.0.0",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.7.1",
+		"sveltekit-autoimport": "^1.6.8",
 		"typescript": "^4.7.2"
 	},
 	"type": "module",
