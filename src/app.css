@@ -15,7 +15,7 @@
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
-	src: url('/fonts/work.ttf') format('woff2');
+	src: url('/fonts/WorkSans.ttf') format('woff2');
 }
 
 @font-face {
