@@ -28,8 +28,9 @@
 
 <!-- * hero -->
 <div class="bg-[#ffd1b9] h-auto text-black overflow-hidden border-b-[1px] border-black ">
-	<div class="max-w-7xl m-auto py-28 font-pixel text-9xl text-[#3c3932] relative">
+	<div class="max-w-7xl m-auto py-40 font-pixel text-8xl text-black relative">
 		<h1 class=" font-display text-center">A living network of curious minds.</h1>
+		<img class=" animate-pulse absolute top-8 h-[500px] left-1/2 -translate-x-1/2" src="/images/bg.svg" alt="">
 	</div>
 </div>
 

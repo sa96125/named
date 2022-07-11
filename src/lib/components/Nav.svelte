@@ -17,7 +17,7 @@
 
 <nav
 	class="z-10 py-4 bg-[#ffd1b9] border-b-[1px] sticky top-0 border-black transition duration-500 ease-linear 
-	{y > 480 || $page.url.pathname !== '/' ? 'bg-[#ffd1b9] text-xs py-1 transition duration-500 ease-linear' : ''}"
+	{y > 480 || $page.url.pathname !== '/' ? 'bg-white text-xs py-1 transition duration-500 ease-linear' : ''}"
 >
 	<div class=" max-w-7xl m-auto flex items-center justify-between">
 		<span class=" flex items-center justify-between gap-5">

@@ -3,7 +3,7 @@
 	import viewport from '../../actions/useViewportAction';
 	export let celebrities;
 
-	const celebrityPreviewPromise = import('./CelebrityPreview.svelte')
+	const celebrityPreviewPromise = import('./CelebrityPreview.svelte');
 
 	let page = 0;
 
@@ -32,15 +32,9 @@
 		{:then { default: CelebrityPreview }}
 			<CelebrityPreview {celebrity} />
 		{/await}
-		<SkeletonCard />
-		<SkeletonCard />
-		<SkeletonCard />
-		<SkeletonCard />
-		<SkeletonCard />
-		<SkeletonCard />
-		<SkeletonCard />	
 		{#if celebrities.length - 1 === index && celebrities.length >= 5}
 			<div use:viewport on:enterViewport={() => getNextCelebrities()} />
 		{/if}
 	{/each}
+	<SkeletonCard /><SkeletonCard /><SkeletonCard /><SkeletonCard /><SkeletonCard /><SkeletonCard />
 {/if}
