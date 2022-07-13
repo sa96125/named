@@ -12,7 +12,7 @@
 		"check:watch": "svelte-check --tsconfig ./jsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
 		"format": "prettier --write --plugin-search-dir=. .",
-		"vercel-build": "prisma migrate deploy && npm run build"
+		"vercel-build": "npm run build"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
