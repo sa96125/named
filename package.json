@@ -2,7 +2,6 @@
 	"name": "dementor-front",
 	"version": "0.0.1",
 	"scripts": {
-		"predev": "prisma migrate dev",
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
 		"postbuild": "cp prisma/schema.prisma .vercel_build_output/functions/node/render/ && cp node_modules/@prisma/engines/*query* .vercel_build_output/functions/node/render/",
@@ -37,6 +36,7 @@
 		"jsonwebtoken": "^8.5.1",
 		"marked": "^4.0.17",
 		"postcss": "^8.4.14",
+		"redis": "^4.2.0",
 		"tailwindcss": "^3.1.4"
 	}
 }
