@@ -3,11 +3,11 @@
 <h2>Dev Log </br> </h2>
 
 <p>
-  <img alt="Sveltekit" src="https://img.shields.io/badge/Sveltekit-white.svg">
-  <img alt="TailwindCSS" src="https://img.shields.io/badge/TailwindCSS-white.svg">
-  <img alt="Prisma" src="https://img.shields.io/badge/Prisma-white.svg">
-  <img alt="PlanetScale" src="https://img.shields.io/badge/PlanetScale-white.svg">
-  <img alt="Redis" src="https://img.shields.io/badge/Redis-white.svg">
+  <img alt="Sveltekit" src="https://img.shields.io/badge/Sveltekit-orange.svg">
+  <img alt="TailwindCSS" src="https://img.shields.io/badge/TailwindCSS-blue.svg">
+  <img alt="Prisma" src="https://img.shields.io/badge/Prisma-grey.svg">
+  <img alt="PlanetScale" src="https://img.shields.io/badge/PlanetScale-black.svg">
+  <img alt="Redis" src="https://img.shields.io/badge/Redis-red.svg">
   <img align="right" alt="Hooks" src="https://img.shields.io/badge/🔥 One per day, I hope a little habit can make a miracle.-black.svg">
 </p>
 
@@ -19,7 +19,7 @@
 
 - 주니어 개발자들이 공통적으로 겪는 문제가 자주 보임( 부트캠프 참여 유무, 사수 부재등 )
 
-- 개인적으로 깨달은 점은 본질적인 문제는 내 자신에게 있다는 것이다. 하지만 이를 해결할 수 있는 방향성을 제공(경험 공유)하는 것만으로도 이를 조금 더 쉽게 해결할 수 있지 않을까? 
+- 개인적으로 깨달은 점은 본질적인 문제는 내 자신에게 있다는 것이다. 하지만 이를 해결할 수 있는 방향성(경험 공유, 동기 부여)을 현직자가 제공하는 것만으로도 이를 조금 더 혼자의 힘으로 해결할 수 있지 않을까? 
 
 - 부트캠프를 나왔다고 취업하는 것도아니며 좋은 사수가 있다고해서 좋은 개발자가 될 수 있는 것은 아니다. 
 
@@ -95,12 +95,42 @@
 
 
 
-**Prisma -> Prisma/PlanetScale**
+**Prisma/Railway -> Prisma/PlanetScale**
 
 * 첫 쿼리, 응답속도 2500ms -> 900ms, 평균 응답 900ms -> 200ms 성능 개선
 
 ```
- 체감상 반응속도가 상당히 좋아짐
+ SSR 반응속도가 상당히 좋아짐
  그렇다할 변경이 아니였음에도 Railway 덕에 희열을 느낀 후(?), 더 나은 성능을 위한 고민을 더 많이 하게 됨
  내 프로젝트임에도 불구하고 불편함을 느끼면, 그 누구도 사용하지 않을 것 같다.
 ```
+
+
+<br/><br/>
+
+
+
+**Radis**
+
+- 메모리 캐싱을 통해 서버 작업양 감소
+
+- production, Light house performance score 100
+
+```
+ 성능적인 측면을 고려하다보니 아무렇지 않게 자주 방문하던 웹사이트도 면밀히 살피게 됨. 
+ 최대한 프리티어등급에서 아껴 사용할 수 있는 방법 찾다 보니 이는 곧 서버의 부하를 낮추는 결과로 이어 질 수 있었음. 
+ 상황 또는 필요성에 따라 캐쉬를 적절하게 사용해야함. ( 모든 데이터 용량을 커버 불가 )
+ 잘못된 메모리사용은 비용의 증가로 질 수 있어 무엇을 담을지 신중하게 생각해봐야 할 것
+```
+
+<br/><br/>
+
+
+
+**무한 스크롤**
+
+- Intersection Observer를 사용한 데이터 fetching( Replow, Repaint 최소화 )
+
+- Skeleton Card(스태틱 와이어프레임)를 사용하여 불편할 수 있는 로딩시간을 대체하여 사용자 경험 개선
+
+<br/><br/>
