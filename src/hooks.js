@@ -1,15 +1,8 @@
-import * as cookie from 'cookie';
-import pkg from 'jsonwebtoken';
-import { secretKey } from '$lib/constants';
+import { sequence } from '@sveltejs/kit/hooks';
+import { useCachePage } from '../src/services/middleware/useCachePage';
+import { useErrors } from '../src/services/middleware/useErrors';
 
-const { verify } = pkg;
-
-export async function handle({ event, resolve }) {
-	const cookies = cookie.parse(event.request.headers.get('cookie') || '');
-	const uid = cookies.jwt && verify(cookies.jwt, secretKey);
-	event.locals.userId = uid ? uid : null;
-	return await resolve(event);
-}
+export const handle = sequence(useErrors, useCachePage);
 
 export function getSession({ locals }) {
 	return {
