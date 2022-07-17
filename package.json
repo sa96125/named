@@ -34,6 +34,7 @@
 		"autoprefixer": "^10.4.7",
 		"cookie": "^0.5.0",
 		"jsonwebtoken": "^8.5.1",
+		"luxon": "^3.0.1",
 		"marked": "^4.0.17",
 		"postcss": "^8.4.14",
 		"redis": "^4.2.0",
