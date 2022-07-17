@@ -1,15 +1,19 @@
 import adapter from '@sveltejs/adapter-auto';
 import autoImport from 'sveltekit-autoimport';
+import { resolve } from 'path';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
 		adapter: adapter(),
-		alias: {
-			$components: 'src/lib/components',
-			$store: 'src/lib/store'
-		},
 		vite: {
+			resolve: {
+				alias: {
+					$components: resolve('./src/lib/components'),
+					$services: resolve('./src/services'),
+					$store: resolve('./src/lib/store')
+				}
+			},
 			plugins: [
 				autoImport({
 					components: ['./src/lib/components'],
