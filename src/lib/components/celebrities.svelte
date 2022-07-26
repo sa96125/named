@@ -1,9 +1,10 @@
 <script>
 	import { navigating } from '$app/stores';
-	import viewport from '../../actions/useViewportAction';
+	import viewport from '$lib/actions/useViewportAction';
+	import CelebritySkeletonCard from './celebrity-skeleton-card.svelte';
 	export let celebrities;
 
-	const celebrityPreviewPromise = import('./CelebrityPreview.svelte');
+	const celebrityPreviewPromise = import('./celebrity-preview.svelte');
 
 	let page = 0;
 
@@ -13,13 +14,10 @@
 
 	const getNextCelebrities = async () => {
 		page += 1;
-
-		const { celebrities: nextCelebrities } = await fetch(`/api/celebrities/?page=${page}`, {
+		const { celebrities: nextCelebrities } = await fetch(`/api/celebrities/?page=${page}`,{
 			credentials: 'include'
 		}).then((response) => response.json());
-
 		celebrities = [...celebrities, ...nextCelebrities];
-		console.log(nextCelebrities);
 	};
 </script>
 
@@ -28,7 +26,7 @@
 {:else}
 	{#each celebrities as celebrity, index (celebrity.id)}
 		{#await celebrityPreviewPromise}
-			<SkeletonCard />
+			<CelebritySkeletonCard />
 		{:then { default: CelebrityPreview }}
 			<CelebrityPreview {celebrity} />
 		{/await}
@@ -36,5 +34,4 @@
 			<div use:viewport on:enterViewport={() => getNextCelebrities()} />
 		{/if}
 	{/each}
-	<SkeletonCard /><SkeletonCard /><SkeletonCard /><SkeletonCard /><SkeletonCard /><SkeletonCard />
 {/if}

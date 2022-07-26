@@ -1,5 +1,3 @@
-import { base } from './constants'
-
 async function send({ method, path, data, token }) {
 	const opts = { method, headers: {} };
 
@@ -12,7 +10,7 @@ async function send({ method, path, data, token }) {
 		opts.headers['Authorization'] = `Token ${token}`;
 	}
 
-	return fetch(`${base}/${path}`, opts)
+	return fetch(`${path}`, opts)
 		.then((response) => response.text())
 		.then((json) => {
 			try {

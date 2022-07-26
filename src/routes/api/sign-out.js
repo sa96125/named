@@ -1,4 +1,6 @@
-export function post() {
+export const post = async ({ locals }) => {
+	locals.session = null;
+
 	return {
 		status: 302,
 		headers: {
@@ -9,4 +11,4 @@ export function post() {
 			ok: true
 		}
 	};
-}
+};

@@ -19,7 +19,7 @@
 	<h4>로그인 하기</h4>
 
 	<form
-		action="/api/auth/login"
+		action="/api/sign-in"
 		method="post"
 		class="flex-center flex-col w-full max-w-sm px-10 mt-2"
 	>
@@ -47,7 +47,7 @@
 		<p>Email 또는 Password를 잊으셨나요?</p>
 		<p>
 			계정이 없으신가요?
-			<a class="text-blue-400 border-b-[1px] border-blue-400" href="/">create account</a>
+			<a class="text-blue-400 border-b-[1px] border-blue-400" href="/#">create account</a>
 		</p>
 	</div>
 </main>

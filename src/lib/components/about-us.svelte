@@ -15,7 +15,6 @@
 	</div>
 </div>
 
-
 <div class="h-auto font-work bg-black text-white mb-3  border-[1px] border-black shadow-md rounded-sm">
 	<p class="p-5 pb-1 text-sm">Sponsor</p>
 	<div class="flex flex-col text-lg font-thin p-5 pt-0 gap-5">
@@ -28,10 +27,6 @@
 	</div>
 </div>
 
-<!-- 
-<div class="h-auto font-work bg-black text-white mb-3 overflow-hidden shadow-md rounded-sm">
-	<img class="w-full mx-auto rounded-lg"  {src} alt="dev" />
-</div> -->
 
 
 

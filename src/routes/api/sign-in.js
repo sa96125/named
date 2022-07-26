@@ -1,6 +1,6 @@
 import { sign } from 'jsonwebtoken';
 import { secretKey } from '$lib/constants';
-import PrismaClient from "$lib/prisma"
+import PrismaClient from '$lib/prisma';
 
 const prisma = new PrismaClient();
 
@@ -9,11 +9,11 @@ export const post = async ({ request }) => {
 
 	const user = await prisma.user.findUnique({
 		where: {
-		  email: data.get('email'),
+			email: data.get('email')
 		}
-	})
+	});
 
-	if(!user) {
+	if (!user) {
 		return {
 			status: 404,
 			headers: {

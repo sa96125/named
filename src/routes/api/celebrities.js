@@ -1,23 +1,6 @@
 import PrismaClient from '$lib/prisma';
-// import Redis from "ioredis";
-// import { createPrismaRedisCache } from "prisma-redis-middleware";
 
-
-// const redis = new Redis();
 const prisma = new PrismaClient();
-
-// const cacheMiddleware = createPrismaRedisCache({
-//   models: [
-//     { model: "Celebrity", excludeMethods: ["findMany"] },
-//   ],
-//   storage: { type: "memory", options: { size: 2048 }, log: console },
-//   cacheTime: 300,
-//   excludeModels: ["Product", "Cart"],
-//   excludeMethods: ["count", "groupBy"],
-//   onHit: (key) => console.log("hit", key),
-//   onMiss: (key) => console.log("miss", key),
-//   onError: (key) => console.log("error", key),
-// });
 
 const loggingMiddleware = async (params, next) => {
   const before = Date.now()
@@ -27,15 +10,12 @@ const loggingMiddleware = async (params, next) => {
   return result
 }
 
-// prisma.$use(cacheMiddleware);
 prisma.$use(loggingMiddleware)
 
-export async function get({ url: { searchParams } }) {
+export const get = async ({ url: { searchParams } }) => {
 	const tag = searchParams.get('tag');
 	const page = searchParams.get('page') || 0;
-	// const page = +searchParams.get('page') || 1;
-	// const jwt = locals.user && locals.user.token;
-	// pages: Math.ceil(articlesCount / page_size)
+
 	let celebrities;
 
 	if (tag) {
