@@ -3,13 +3,13 @@
 	import { loading } from '$store';
 	import '../app.css';
 	import Header from '$lib/components/header.svelte';
-	import Loading from '$lib/components/loading.svelte';
+	import Loader from '$lib/components/loader.svelte';
 
 	$: loading.setNavigate(!!$navigating);
 </script>
 
 <Header />
-<Loading />
+<Loader />
 <div style:min-height="80vh">
 	<slot />
 </div>
