@@ -31,10 +31,7 @@
 	<title>Welcome to Dementor</title>
 </svelte:head>
 
-<!-- * Hero -->
-<h1 class="bg-[#ffb217] text-8xl m-auto py-40 font-display text-center border-b-[1px] border-black">
-	A place to share experience.
-</h1>
+
 
 <!-- * Contents -->
 <div class="container mx-auto">
