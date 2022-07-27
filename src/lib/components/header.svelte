@@ -11,9 +11,11 @@
 	};
 </script>
 
-<div class="z-10 py-4 bg-[#ffb217] border-b-[1px] sticky top-0 border-black transition duration-500 ease-linear">
+<div class="z-10 py-7 bg-[#fd4343] border-b-[1px] sticky top-0 border-black transition duration-500 ease-linear">
 	<div class="container mx-auto flex flex-row items-center justify-between">
-		<a href="/"><img class="w-8" src="/icons/crown.svg" alt="" /></a>
+		<a href="/">
+			<h1 class="text-black text-9xl mb-4 font-display ">A place meet Senior.</h1>
+		</a>
 		<div class="flex items-center md:flex gap-4">
 			{#if $session && $session.userId}
 				<p>{$session.userId}</p>

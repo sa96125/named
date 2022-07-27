@@ -1,7 +1,8 @@
 <script>
 	import { slide } from 'svelte/transition';
+	
 	export let celebrity;
-	let article;
+
 	let isOpen = false;
 	const toggle = () => {
 		isOpen = !isOpen;
@@ -41,8 +42,8 @@
 
 		<ul class="flex gap-2 mt-2">
 			{#each celebrity.tags as tag}
-				<li class="bg-[#f8f7f4] px-3 py-1">
-					<p class=" text-zinc-400 text-xs font-thin">{tag.name}</p>
+				<li class="border-[1px] px-3 py-1">
+					<p class=" text-zinc-600 text-xs font-thin">{tag.name}</p>
 				</li>
 			{/each}
 		</ul>

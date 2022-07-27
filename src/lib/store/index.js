@@ -29,7 +29,7 @@ const createLoading = () => {
 		update,
 		set,
 		setNavigate,
-    setLoading
+		setLoading
 	};
 };
 

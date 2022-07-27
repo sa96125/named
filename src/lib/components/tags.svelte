@@ -3,7 +3,7 @@
     export let selectedTag
 </script>
 
-<div class="nav flex gap-5 font-mono border-b-[1px] ">
+<div class="nav flex flex-wrap gap-5 font-mono border-b-[1px] w-full">
 	<a
 		href="/"
 		class="nav-item p-2 hover:bg-black hover:text-white {selectedTag
